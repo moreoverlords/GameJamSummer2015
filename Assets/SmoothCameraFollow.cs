@@ -21,7 +21,7 @@ public class SmoothCameraFollow : MonoBehaviour {
 			Vector3 delta = target.position - GetComponent<Camera>().ViewportToWorldPoint(
 				new Vector3(targetRelPosn.x, verticalOffset, targetRelPosn.z)
 			);
-			Vector3 destination = transform.position + delta;
+			Vector3 destination = new Vector3(transform.position.x, target.position.y, transform.position.z);//transform.position + delta;
 			transform.position = Vector3.SmoothDamp(transform.position, destination, ref velocity, dampTime);
 		}
 	}

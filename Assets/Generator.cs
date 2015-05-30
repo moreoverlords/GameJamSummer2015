@@ -29,8 +29,8 @@ public class Generator : MonoBehaviour {
 		Vector2 wallSize = wall.GetComponent<BoxCollider2D> ().size;  
 		rowHeight = wallSize.y;
 
-		leftBoundary = -(screenWidth / 2);
-		rightBoundary = leftBoundary + screenWidth;
+		leftBoundary = -5f;//-(screenWidth / 2);
+		rightBoundary = 35f;//leftBoundary + screenWidth;
 		leftWallx  = leftBoundary + wallSize.x;
 		rightWallx = rightBoundary - wallSize.x;
 	}
@@ -54,7 +54,7 @@ public class Generator : MonoBehaviour {
 		}
 		// check below
 		while (topPosition.position.y < (bottomOfWorld.y + rowBufferCount * rowHeight)) {
-			// TODO: spawn a new row above
+			// TODO: spawn a new row below
 			makeRow (bottomOfWorld.y - rowHeight, bottomOfWorld.y);
 			bottomOfWorld = new Vector3(bottomOfWorld.x,
 			                            bottomOfWorld.y - rowHeight, 
