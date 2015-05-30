@@ -11,8 +11,11 @@ public class playerController : MonoBehaviour {
 	public KeyCode left;
 	public KeyCode right;
 
+	public PhysicsMaterial2D bounceMaterial;
+
 	private Rigidbody2D rigidbody2d;
 	private Transform transform2d;
+	private CircleCollider2D circleCollider2d;
 
 	enum State{Idle, ChargeRight, ChargeLeft, LaunchRight, LaunchLeft} 
 	private State currentState;
@@ -20,6 +23,7 @@ public class playerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		currentState = State.Idle;
+		circleCollider2d = GetComponent<CircleCollider2D> ();
 		rigidbody2d = GetComponent<Rigidbody2D>();
 		transform2d = GetComponent<Transform>();	
 	}
@@ -49,8 +53,18 @@ public class playerController : MonoBehaviour {
 			float currentRelease = Mathf.Min(releaseForce, maxReleaseForce);
 			rigidbody2d.AddForce (Vector2.right * currentRelease * -1);
 			releaseForce = 0;
-		}
+		}		
+	}
 
-		
+	void OnCollisionEnter2D (Collision2D coll) {
+		if (coll.gameObject.tag == "Player") { 
+			circleCollider2d.sharedMaterial  = bounceMaterial;
+		}
+	}
+
+	void OnCollisionExit2D (Collision2D coll) {
+		if (coll.gameObject.tag == "Player") {
+			circleCollider2d.sharedMaterial = null;
+		}
 	}
 }
