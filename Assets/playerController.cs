@@ -74,12 +74,12 @@ public class playerController : MonoBehaviour {
 				//rigidbody2d.velocity = Vector2.zero;
 				Vector2 relativePosition = transform.position - coll.rigidbody.transform.position;
 				relativePosition = relativePosition/relativePosition.magnitude;
-				rigidbody2d.AddForce(relativePosition*(otherVelocityMag*hardMomentum*momentumScale*(1+velocityMag/otherVelocityMag) + minBounce));
+				rigidbody2d.AddForce(relativePosition*(otherVelocityMag*hardMomentum*momentumScale*(otherVelocityMag/velocityMag) + minBounce));
 			} else {
 				//rigidbody2d.velocity = Vector2.zero;
 				Vector2 relativePosition = transform.position - coll.rigidbody.transform.position;
 				relativePosition = relativePosition/relativePosition.magnitude;
-				rigidbody2d.AddForce(relativePosition*(otherVelocityMag*softMomentum*momentumScale*(1+velocityMag/otherVelocityMag) + minBounce));
+				rigidbody2d.AddForce(relativePosition*(otherVelocityMag*softMomentum*momentumScale*(otherVelocityMag/velocityMag) + minBounce));
 			}
 		}
 	}
