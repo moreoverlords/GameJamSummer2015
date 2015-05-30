@@ -6,9 +6,7 @@ public class SmoothCameraFollow : MonoBehaviour {
 	public float dampTime = 0.15f;
 	public float verticalOffset;
 	private Vector3 velocity = Vector3.zero;
-	public Transform player1;
-	public Transform player2;
-
+	public Transform generator;
 
 	// Use this for initialization
 	void Start () {
@@ -17,14 +15,8 @@ public class SmoothCameraFollow : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (player1 && player2)
-		{
-			Transform target;
-			if (player1.position.y >= player2.position.y){
-				target = player1; 
-			} else {
-				target = player2;
-			}
+		if (generator.GetComponent<Generator>().topPosition) {
+			Transform target = generator.GetComponent<Generator>().topPosition;
 			Vector3 targetRelPosn = GetComponent<Camera>().WorldToViewportPoint(target.position);
 			Vector3 delta = target.position - GetComponent<Camera>().ViewportToWorldPoint(
 				new Vector3(targetRelPosn.x, verticalOffset, targetRelPosn.z)
