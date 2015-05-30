@@ -8,20 +8,31 @@ public class Generator : MonoBehaviour {
 	public Transform topPosition;
 	public Vector3 topOfWorld;
 	public Vector3 bottomOfWorld;
-	public float rowHeight = 50f;
+	float rowHeight = 50f;
 	public int rowBufferCount = 5;
 	public bool ObstacleNeeded;
 	public GameObject obstacle;
 	public GameObject wall;
 
+	public float leftBoundary;
+	float rightBoundary;
 	public float leftWallx; //x value for left wall
-	public float rightWallx; //"        " right wall
+	float rightWallx;
+	public float screenWidth;
 
 	// Use this for initialization
 	void Start () {
 		topPosition = player1;
 		bottomOfWorld = topPosition.position;
 		topOfWorld = topPosition.position;
+
+		Vector2 wallSize = wall.GetComponent<BoxCollider2D> ().size;  
+		rowHeight = wallSize.y;
+
+		leftBoundary = -(screenWidth / 2);
+		rightBoundary = leftBoundary + screenWidth;
+		leftWallx  = leftBoundary + wallSize.x;
+		rightWallx = rightBoundary - wallSize.x;
 	}
 	
 	// Update is called once per frame
@@ -38,25 +49,25 @@ public class Generator : MonoBehaviour {
 			// TODO: spawn a new row above
 			makeRow (topOfWorld.y, topOfWorld.y + rowHeight);
 			topOfWorld = new Vector3(topOfWorld.x,
-			                                  topOfWorld.y + rowHeight, 
-			                                  topOfWorld.z);
+			                         topOfWorld.y + rowHeight, 
+			                         topOfWorld.z);
 		}
 		// check below
 		while (topPosition.position.y < (bottomOfWorld.y + rowBufferCount * rowHeight)) {
 			// TODO: spawn a new row above
 			makeRow (bottomOfWorld.y - rowHeight, bottomOfWorld.y);
 			bottomOfWorld = new Vector3(bottomOfWorld.x,
-			                                     bottomOfWorld.y - rowHeight, 
-			                                     bottomOfWorld.z);
+			                            bottomOfWorld.y - rowHeight, 
+			                            bottomOfWorld.z);
 			}
 	}
 
 	void makeRow(float rowTop, float rowBottom) {
 		if (wall) {
-			int numObstacles = (int) Mathf.Round (Random.Range(0, 5));
+			int numObstacles = (int) Mathf.Round (Random.Range(0, 3));
 			GameObject leftWall, rightWall;
-			leftWall  = Instantiate (wall, new Vector3 (0,          rowBottom, 0), Quaternion.identity) as GameObject;
-			rightWall = Instantiate (wall, new Vector3 (rightWallx, rowBottom, 0), Quaternion.identity) as GameObject;
+			leftWall  = Instantiate (wall, new Vector3 (leftBoundary, rowBottom, 0), Quaternion.identity) as GameObject;
+			rightWall = Instantiate (wall, new Vector3 (rightWallx,   rowBottom, 0), Quaternion.identity) as GameObject;
 
 			for (int i=0; i<numObstacles; i++) {
 				makeObstacle(rowTop, rowBottom);
