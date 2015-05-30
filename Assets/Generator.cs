@@ -20,6 +20,8 @@ public class Generator : MonoBehaviour {
 	float rightWallx;
 	public float screenWidth;
 
+	public float numBoxes = 5;
+
 	// Use this for initialization
 	void Start () {
 		topPosition = player1;
@@ -64,27 +66,23 @@ public class Generator : MonoBehaviour {
 
 	void makeRow(float rowTop, float rowBottom) {
 		if (wall) {
-			int numObstacles = (int) Mathf.Round (Random.Range(0, 3));
 			GameObject leftWall, rightWall;
-			leftWall  = Instantiate (wall, new Vector3 (leftBoundary, rowBottom, 0), Quaternion.identity) as GameObject;
-			rightWall = Instantiate (wall, new Vector3 (rightWallx,   rowBottom, 0), Quaternion.identity) as GameObject;
-
-			for (int i=0; i<numObstacles; i++) {
-				makeObstacle(rowTop, rowBottom);
-			}
+			leftWall = Instantiate (wall, new Vector3 (leftBoundary, rowBottom, 0), Quaternion.identity) as GameObject;
+			rightWall = Instantiate (wall, new Vector3 (rightWallx, rowBottom, 0), Quaternion.identity) as GameObject;
 		}
-	}
-
-	void makeObstacle (float rowTop, float rowBottom) {
 		if (obstacle) {
-			Quaternion rotation = new Quaternion ();
-			rotation.eulerAngles = new Vector3 (0, 0, Random.Range (-180, 180)); 
+			float boxWidth = screenWidth/numBoxes;
+			for (int j = 0; j < numBoxes; j++) {
+				Quaternion rotation = new Quaternion ();
+				rotation.eulerAngles = new Vector3 (0, 0, Random.Range (-180, 180)); 
 
-			Vector3 position = new Vector3 (Random.Range (leftWallx, rightWallx), Random.Range (rowTop, rowBottom), 0);
-			GameObject newObstacle = Instantiate (obstacle, position, rotation) as GameObject;
+				Vector3 position = new Vector3 (0, Random.Range (rowTop, rowBottom), 0);
+				Vector3 scale = new Vector3 (Random.Range (1f, 4f), Random.Range (1f, 4f), 1f);
+				//position.x -= obstacle.GetComponent<>() /2;
+				position.x += leftWallx + j * boxWidth;
 
-			Vector3 scale = new Vector3 (Random.Range (0.1f, 4.0f), Random.Range (0.1f, 4.0f), 0f);
-			newObstacle.transform.localScale = scale;
+				GameObject newObstacle = Instantiate (obstacle, position, rotation) as GameObject;
+			}
 		}
 	}
 }
