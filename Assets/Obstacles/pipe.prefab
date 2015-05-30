@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 481668}
   - 212: {fileID: 21204148}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pipe bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,8 +24,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 446698}
-  - 68: {fileID: 6820062}
-  m_Layer: 0
+  - 61: {fileID: 6142176}
+  m_Layer: 10
   m_Name: pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 497336}
   - 212: {fileID: 21256290}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pipe middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 404368}
   - 212: {fileID: 21269310}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pip top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 140052}
   m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106709}
-  m_LocalPosition: {x: -27.4685593, y: 1.31464636, z: -49.6829987}
+  m_LocalPosition: {x: -47.2903519, y: -2.50047755, z: -49.6829987}
   m_LocalScale: {x: 4.96836758, y: 4.96836519, z: 4.96836519}
   m_Children:
   - {fileID: 404368}
@@ -115,20 +115,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 446698}
   m_RootOrder: 2
---- !u!68 &6820062
-EdgeCollider2D:
+--- !u!61 &6142176
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 140052}
   m_Enabled: 1
-  m_Material: {fileID: 6200000, guid: 74c4b2a230119b146b7238a45d93a990, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-  - {x: -1.34717393, y: -.25835824}
-  - {x: -1.35346198, y: .662569225}
+  m_Offset: {x: -1.50606024, y: .205174014}
+  serializedVersion: 2
+  m_Size: {x: .270184726, y: .906104207}
 --- !u!212 &21204148
 SpriteRenderer:
   m_ObjectHideFlags: 1

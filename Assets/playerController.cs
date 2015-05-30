@@ -26,6 +26,13 @@ public class playerController : MonoBehaviour {
 	}
 	
 	void Update () {
+		if (rigidbody2d.velocity.y > 0) {
+			gameObject.layer = LayerMask.NameToLayer("UpBall");
+		}
+		else if (rigidbody2d.velocity.y <= 0) {
+			gameObject.layer = LayerMask.NameToLayer("DownBall");
+		}
+
 		if (Input.GetKeyDown (right)) {
 			currentState = State.ChargeRight;
 			releaseForce = initialReleaseForce;
