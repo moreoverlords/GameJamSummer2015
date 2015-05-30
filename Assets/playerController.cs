@@ -5,10 +5,13 @@ public class playerController : MonoBehaviour {
 	
 	public float releaseForce;
 	public float maxReleaseForce;
-	private Rigidbody2D rigidbody2d;
+
 	public float releaseForceIncreaseRate;
 	public KeyCode left;
 	public KeyCode right;
+
+	private Rigidbody2D rigidbody2d;
+	private Transform transform2d;
 
 	enum State{Idle, ChargeRight, ChargeLeft, LaunchRight, LaunchLeft} 
 	private State currentState;
@@ -16,20 +19,31 @@ public class playerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		currentState = State.Idle;
-		rigidbody2d = GetComponent<Rigidbody2D>(); 
-	
+		rigidbody2d = GetComponent<Rigidbody2D>();
+		transform2d = GetComponent<Transform>();	
 	}
 	
 	void FixedUpdate () {
 		if (Input.GetKey (right)) {
 			currentState = State.ChargeRight;
 			releaseForce += releaseForceIncreaseRate;
-		} else if (currentState == State.ChargeRight && Input.GetKeyUp (right)) {
+		} 
+		else if (Input.GetKey (left)) {
+			currentState = State.ChargeLeft;
+			releaseForce += releaseForceIncreaseRate;
+		}
+		else if (currentState == State.ChargeRight && Input.GetKeyUp (right)) {
 			currentState = State.LaunchRight;
 			float currentRelease = Mathf.Min(releaseForce, maxReleaseForce);
 			rigidbody2d.AddForce (Vector2.right * currentRelease);
 			releaseForce = 0;
-		} 
+		}
+		else if (currentState == State.ChargeLeft && Input.GetKeyUp (left)) {
+			currentState = State.LaunchLeft;
+			float currentRelease = Mathf.Min(releaseForce, maxReleaseForce);
+			rigidbody2d.AddForce (Vector2.right * currentRelease * -1);
+			releaseForce = 0;
+		}
 		
 	}
 }
