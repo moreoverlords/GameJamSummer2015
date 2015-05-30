@@ -5,7 +5,7 @@ public class Generator : MonoBehaviour {
 
 	public Transform player1;
 	public Transform player2;
-	public Transform topPosition;
+	Transform topPosition;
 	public Transform topOfWorld;
 	public Transform bottomOfWorld;
 	public float rowHeight = 50f;

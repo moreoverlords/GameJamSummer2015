@@ -39,6 +39,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc5a8a915ea784b68824234211b5f083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player1: {fileID: 0}
+  player2: {fileID: 0}
+  topOfWorld: {fileID: 0}
+  bottomOfWorld: {fileID: 0}
+  rowHeight: 50
+  rowBufferCount: 5
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
