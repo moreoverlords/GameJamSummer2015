@@ -14,7 +14,6 @@ public class playerController : MonoBehaviour {
 
 	public float momentumRange;
 	public float hardMomentum;
-	public float normalMomentum;
 	public float softMomentum;
 	public float momentumScale;
 	public float minBounce;
