@@ -70,7 +70,7 @@ public class playerController : MonoBehaviour {
 			// the other player has more momentum, so this player bounces off harder
 			float otherVelocityMag = coll.rigidbody.velocity.magnitude;
 			float velocityMag = rigidbody2d.velocity.magnitude;
-			if (otherVelocityMag>=velocityMag+momentumRange) {
+			if (otherVelocityMag/velocityMag>=1+momentumRange) {
 				//rigidbody2d.velocity = Vector2.zero;
 				Vector2 relativePosition = transform.position - coll.rigidbody.transform.position;
 				relativePosition = relativePosition/relativePosition.magnitude;

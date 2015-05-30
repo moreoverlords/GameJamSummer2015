@@ -180,7 +180,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11438600, guid: 6249ea636351c3d44b58c394668633cf, type: 2}
       propertyPath: hardMomentum
-      value: 1.5
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 11438600, guid: 6249ea636351c3d44b58c394668633cf, type: 2}
       propertyPath: normalMomentum
@@ -188,7 +188,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11438600, guid: 6249ea636351c3d44b58c394668633cf, type: 2}
       propertyPath: softMomentum
-      value: .5
+      value: .75
       objectReference: {fileID: 0}
     - target: {fileID: 11438600, guid: 6249ea636351c3d44b58c394668633cf, type: 2}
       propertyPath: momentumScale
@@ -251,6 +251,18 @@ Prefab:
     - target: {fileID: 183980, guid: 6b6050c1d85b9e842a566d5de390e93a, type: 2}
       propertyPath: m_Name
       value: player 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11419404, guid: 6b6050c1d85b9e842a566d5de390e93a, type: 2}
+      propertyPath: hardMomentum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11419404, guid: 6b6050c1d85b9e842a566d5de390e93a, type: 2}
+      propertyPath: softMomentum
+      value: .75
+      objectReference: {fileID: 0}
+    - target: {fileID: 11419404, guid: 6b6050c1d85b9e842a566d5de390e93a, type: 2}
+      propertyPath: momentumRange
+      value: .100000001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b6050c1d85b9e842a566d5de390e93a, type: 2}

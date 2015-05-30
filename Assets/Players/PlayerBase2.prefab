@@ -105,9 +105,9 @@ MonoBehaviour:
   releaseForceIncreaseRate: 1000
   left: 97
   right: 100
-  momentumRange: 5
-  hardMomentum: 1.5
-  softMomentum: .5
+  momentumRange: .100000001
+  hardMomentum: 1
+  softMomentum: .75
   momentumScale: 100
   minBounce: 10
   verticalDrag: 0
