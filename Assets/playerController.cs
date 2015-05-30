@@ -12,11 +12,14 @@ public class playerController : MonoBehaviour {
 	public KeyCode left;
 	public KeyCode right;
 
+	public float momentumRange;
 	public float hardMomentum;
+	public float normalMomentum;
 	public float softMomentum;
 	public float momentumScale;
-	
-	public CircleCollider2D trigger;
+	public float minBounce;
+
+	public float verticalDrag;
 
 	private Rigidbody2D rigidbody2d;
 	private Transform transform2d;
@@ -66,10 +69,18 @@ public class playerController : MonoBehaviour {
 	void OnCollisionEnter2D (Collision2D coll) {
 		if (coll.gameObject.tag == "Player") {
 			// the other player has more momentum, so this player bounces off harder
-			if (coll.rigidbody.velocity.magnitude>=rigidbody2d.velocity.magnitude) {
-				rigidbody2d.AddForce(coll.rigidbody.velocity*hardMomentum*momentumScale);
+			float otherVelocityMag = coll.rigidbody.velocity.magnitude;
+			float velocityMag = rigidbody2d.velocity.magnitude;
+			if (otherVelocityMag>=velocityMag+momentumRange) {
+				//rigidbody2d.velocity = Vector2.zero;
+				Vector2 relativePosition = transform.position - coll.rigidbody.transform.position;
+				relativePosition = relativePosition/relativePosition.magnitude;
+				rigidbody2d.AddForce(relativePosition*(otherVelocityMag*hardMomentum*momentumScale*(1+velocityMag/otherVelocityMag) + minBounce));
 			} else {
-				rigidbody2d.AddForce(coll.rigidbody.velocity*softMomentum*momentumScale);
+				//rigidbody2d.velocity = Vector2.zero;
+				Vector2 relativePosition = transform.position - coll.rigidbody.transform.position;
+				relativePosition = relativePosition/relativePosition.magnitude;
+				rigidbody2d.AddForce(relativePosition*(otherVelocityMag*softMomentum*momentumScale*(1+velocityMag/otherVelocityMag) + minBounce));
 			}
 		}
 	}
