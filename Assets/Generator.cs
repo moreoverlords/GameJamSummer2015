@@ -29,16 +29,16 @@ public class Generator : MonoBehaviour {
 			// TODO: spawn a new row above
 	
 			topOfWorld.position = new Vector3(topOfWorld.position.x,
-			                         topOfWorld.position.y + rowHeight, 
-			                         topOfWorld.position.z);
+			                                  topOfWorld.position.y + rowHeight, 
+			                                  topOfWorld.position.z);
 		}
 		// check below
 		while (topPosition.position.y < (bottomOfWorld.position.y + rowBufferCount * rowHeight)) {
 			// TODO: spawn a new row above
 			
-			bottomOfWorld.position = new Vector3(topOfWorld.position.x,
-			                         topOfWorld.position.y - rowHeight, 
-			                         topOfWorld.position.z);
+			bottomOfWorld.position = new Vector3(bottomOfWorld.position.x,
+			                                     bottomOfWorld.position.y - rowHeight, 
+			                                     bottomOfWorld.position.z);
 		}
 	}
 }
