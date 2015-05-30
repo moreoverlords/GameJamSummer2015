@@ -16,7 +16,7 @@ public class SmoothCameraFollow : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		if (player1 && player2)
 		{
 			Transform target;

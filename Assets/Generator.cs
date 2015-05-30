@@ -6,13 +6,16 @@ public class Generator : MonoBehaviour {
 	public Transform player1;
 	public Transform player2;
 	public Transform topPosition;
-	public Transform topOfWorld;
-	public Transform bottomOfWorld;
+	public Vector3 topOfWorld;
+	public Vector3 bottomOfWorld;
 	public float rowHeight = 50f;
 	public int rowBufferCount = 5;
 
 	// Use this for initialization
 	void Start () {
+		topPosition = player1;
+		bottomOfWorld = topPosition.position;
+		topOfWorld = topPosition.position;
 	}
 	
 	// Update is called once per frame
@@ -25,20 +28,20 @@ public class Generator : MonoBehaviour {
 			}
 		}
 		//
-		while (topPosition.position.y > (topOfWorld.position.y - rowBufferCount * rowHeight)) {
+		while (topPosition.position.y > (topOfWorld.y - rowBufferCount * rowHeight)) {
 			// TODO: spawn a new row above
 	
-			topOfWorld.position = new Vector3(topOfWorld.position.x,
-			                                  topOfWorld.position.y + rowHeight, 
-			                                  topOfWorld.position.z);
+			topOfWorld = new Vector3(topOfWorld.x,
+			                                  topOfWorld.y + rowHeight, 
+			                                  topOfWorld.z);
 		}
 		// check below
-		while (topPosition.position.y < (bottomOfWorld.position.y + rowBufferCount * rowHeight)) {
+		while (topPosition.position.y < (bottomOfWorld.y + rowBufferCount * rowHeight)) {
 			// TODO: spawn a new row above
 			
-			bottomOfWorld.position = new Vector3(bottomOfWorld.position.x,
-			                                     bottomOfWorld.position.y - rowHeight, 
-			                                     bottomOfWorld.position.z);
+			bottomOfWorld = new Vector3(bottomOfWorld.x,
+			                                     bottomOfWorld.y - rowHeight, 
+			                                     bottomOfWorld.z);
 		}
 	}
 }

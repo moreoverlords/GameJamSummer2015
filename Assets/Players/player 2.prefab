@@ -101,8 +101,8 @@ MonoBehaviour:
   releaseForce: 0
   maxReleaseForce: 1000
   releaseForceIncreaseRate: 30
-  left: 97
-  right: 100
+  left: 106
+  right: 107
 --- !u!212 &21296514
 SpriteRenderer:
   m_ObjectHideFlags: 1
