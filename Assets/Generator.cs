@@ -75,7 +75,7 @@ public class Generator : MonoBehaviour {
 			for (int j = 0; j < numBoxes; j++) {
 				Vector3 position = new Vector3 (0, Random.Range (rowTop, rowBottom), 0);
 				Quaternion rotation = new Quaternion ();
-				rotation.eulerAngles = new Vector3 (0, 0, Random.Range (-90, 90)); 
+				rotation.eulerAngles = new Vector3 (0, 0, Random.Range (10, 170)); 
 				//Vector3 scale = new Vector3 (Random.Range (1f, 4f), Random.Range (1f, 4f), 1f);
 				//position.x -= obstacle.GetComponent<>() /2;
 				position.x += -10f + j * boxWidth;
