@@ -21,11 +21,11 @@ public class Generator : MonoBehaviour {
 	void Start () {
 		topPosition = player1;
 		bottomOfWorld = topPosition.position;
-		topOfWorld    = topPosition.position;
+		topOfWorld = topPosition.position;
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	void Update () {
 		if (player1 && player2) {
 			if (player1.position.y >= player2.position.y) {
 				topPosition = player1; 
