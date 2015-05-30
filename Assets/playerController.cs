@@ -6,12 +6,17 @@ public class playerController : MonoBehaviour {
 	public float releaseForce;
 	public float initialReleaseForce;
 	public float maxReleaseForce;
+	public float rotationScalar = .5f;
 
 	public float releaseForceIncreaseRate;
 	public KeyCode left;
 	public KeyCode right;
 
-	public PhysicsMaterial2D bounceMaterial;
+	public float hardMomentum;
+	public float softMomentum;
+	public float momentumScale;
+	
+	public CircleCollider2D trigger;
 
 	private Rigidbody2D rigidbody2d;
 	private Transform transform2d;
@@ -39,8 +44,10 @@ public class playerController : MonoBehaviour {
 
 		else if (currentState == State.ChargeRight && Input.GetKey (right)) {
 			releaseForce += releaseForceIncreaseRate * Time.deltaTime;
+			rigidbody2d.angularVelocity = -releaseForce*rotationScalar;
 		} else if (currentState == State.ChargeLeft && Input.GetKey (left)) {
 			releaseForce += releaseForceIncreaseRate * Time.deltaTime;
+			rigidbody2d.angularVelocity = releaseForce*rotationScalar;
 		}
 
 		else if (currentState == State.ChargeRight && Input.GetKeyUp (right)) {
@@ -57,14 +64,15 @@ public class playerController : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D (Collision2D coll) {
-		if (coll.gameObject.tag == "Player") { 
-			circleCollider2d.sharedMaterial  = bounceMaterial;
+		if (coll.gameObject.tag == "Player") {
+			// the other player has more momentum, so this player bounces off harder
+			if (coll.rigidbody.velocity.magnitude>=rigidbody2d.velocity.magnitude) {
+				rigidbody2d.AddForce(coll.rigidbody.velocity*hardMomentum*momentumScale);
+			} else {
+				rigidbody2d.AddForce(coll.rigidbody.velocity*softMomentum*momentumScale);
+			}
 		}
 	}
 
-	void OnCollisionExit2D (Collision2D coll) {
-		if (coll.gameObject.tag == "Player") {
-			circleCollider2d.sharedMaterial = null;
-		}
-	}
+
 }
