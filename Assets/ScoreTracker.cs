@@ -23,7 +23,7 @@ public class ScoreTracker : MonoBehaviour {
 		if (player1.position.y < (player2.position.y - killDistance)) {
 			// TODO: kill player 1
 			player1.position = new Vector3(player2.position.x + .001f,
-			                      		   player2.position.y + .001f,
+			                      		   player2.position.y + 3f,
 			                      		   player2.position.z + .001f);
 			player1.GetComponent<Rigidbody2D>().velocity = player2.GetComponent<Rigidbody2D>().velocity;
 			player2Score++;
@@ -31,7 +31,7 @@ public class ScoreTracker : MonoBehaviour {
 		if (player2.position.y < (player1.position.y - killDistance)) {
 			// TODO: kill player 2
 			player2.position = new Vector3(player1.position.x + .001f,
-			                      		   player1.position.y + .001f,
+			                      		   player1.position.y + 3f,
 			                               player1.position.z + .001f);
 			player2.GetComponent<Rigidbody2D>().velocity = player1.GetComponent<Rigidbody2D>().velocity;
 

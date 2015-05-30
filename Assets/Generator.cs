@@ -71,15 +71,14 @@ public class Generator : MonoBehaviour {
 			rightWall = Instantiate (wall, new Vector3 (rightWallx, rowBottom, 0), Quaternion.identity) as GameObject;
 		}
 		if (obstacle) {
-			float boxWidth = screenWidth/numBoxes;
+			float boxWidth = 40f/numBoxes;
 			for (int j = 0; j < numBoxes; j++) {
+				Vector3 position = new Vector3 (0, Random.Range (rowTop, rowBottom), 0);
 				Quaternion rotation = new Quaternion ();
 				rotation.eulerAngles = new Vector3 (0, 0, Random.Range (-180, 180)); 
-
-				Vector3 position = new Vector3 (0, Random.Range (rowTop, rowBottom), 0);
-				Vector3 scale = new Vector3 (Random.Range (1f, 4f), Random.Range (1f, 4f), 1f);
+				//Vector3 scale = new Vector3 (Random.Range (1f, 4f), Random.Range (1f, 4f), 1f);
 				//position.x -= obstacle.GetComponent<>() /2;
-				position.x += leftWallx + j * boxWidth;
+				position.x += -10f + j * boxWidth;
 
 				GameObject newObstacle = Instantiate (obstacle, position, rotation) as GameObject;
 			}

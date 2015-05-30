@@ -66,7 +66,7 @@ public class playerController : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D (Collision2D coll) {
-		if (coll.gameObject.tag == "Player") {
+		/*if (coll.gameObject.tag == "Player") {
 			// the other player has more momentum, so this player bounces off harder
 			float otherVelocityMag = coll.rigidbody.velocity.magnitude;
 			float velocityMag = rigidbody2d.velocity.magnitude;
@@ -81,7 +81,7 @@ public class playerController : MonoBehaviour {
 				relativePosition = relativePosition/relativePosition.magnitude;
 				rigidbody2d.AddForce(relativePosition*(otherVelocityMag*softMomentum*momentumScale*(otherVelocityMag/velocityMag) + minBounce));
 			}
-		}
+		}*/
 	}
 
 

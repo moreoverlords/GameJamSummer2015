@@ -27,6 +27,7 @@ GameObject:
   - 58: {fileID: 5897074}
   - 50: {fileID: 5083496}
   - 114: {fileID: 11419404}
+  - 96: {fileID: 9673838}
   m_Layer: 0
   m_Name: PlayerBase2
   m_TagString: Player
@@ -41,7 +42,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 183980}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.4000001, y: 0, z: 0}
+  m_LocalPosition: {x: -5.59890223, y: .267916322, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 486898}
@@ -68,7 +69,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: 0
+  m_GravityScale: 2
   m_FixedAngle: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -87,6 +88,51 @@ CircleCollider2D:
   m_Offset: {x: -.0599999987, y: 0}
   serializedVersion: 2
   m_Radius: 1.0092864
+--- !u!96 &9673838
+TrailRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183980}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 85ff8991d74624d2780a9b560d8e8c7a, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: 1
+  m_StartWidth: 1
+  m_EndWidth: 0
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 16777215
+  m_MinVertexDistance: .100000001
+  m_Autodestruct: 0
 --- !u!114 &11419404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -100,11 +146,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   releaseForce: 0
   initialReleaseForce: 0
-  maxReleaseForce: 1000
+  maxReleaseForce: 5000
   rotationScalar: .5
-  releaseForceIncreaseRate: 1000
-  left: 97
-  right: 100
+  releaseForceIncreaseRate: 2500
+  left: 106
+  right: 108
   momentumRange: .100000001
   hardMomentum: 1
   softMomentum: .75
@@ -135,7 +181,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2092b3018127c324987196e99eff3e2a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5dafd2d4eea023a468da4e55a9e2154b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
