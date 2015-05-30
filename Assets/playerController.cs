@@ -23,14 +23,14 @@ public class playerController : MonoBehaviour {
 		transform2d = GetComponent<Transform>();	
 	}
 	
-	void FixedUpdate () {
+	void Update () {
 		if (Input.GetKey (right)) {
 			currentState = State.ChargeRight;
-			releaseForce += releaseForceIncreaseRate;
+			releaseForce += releaseForceIncreaseRate * Time.deltaTime;
 		} 
 		else if (Input.GetKey (left)) {
 			currentState = State.ChargeLeft;
-			releaseForce += releaseForceIncreaseRate;
+			releaseForce += releaseForceIncreaseRate * Time.deltaTime;
 		}
 		else if (currentState == State.ChargeRight && Input.GetKeyUp (right)) {
 			currentState = State.LaunchRight;
