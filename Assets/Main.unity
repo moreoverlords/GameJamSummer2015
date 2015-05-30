@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   releaseForce: 0
   maxReleaseForce: 1000
-  releaseForceIncreaseRate: 30
+  releaseForceIncreaseRate: 1000
   left: 97
   right: 100
 --- !u!50 &799078247
