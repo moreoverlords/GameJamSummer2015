@@ -6,6 +6,7 @@ public class playerController : MonoBehaviour {
 	public float releaseForce;
 	public float initialReleaseForce;
 	public float maxReleaseForce;
+	public float rotationScalar = .5f;
 
 	public float releaseForceIncreaseRate;
 	public KeyCode left;
@@ -43,8 +44,10 @@ public class playerController : MonoBehaviour {
 
 		else if (currentState == State.ChargeRight && Input.GetKey (right)) {
 			releaseForce += releaseForceIncreaseRate * Time.deltaTime;
+			rigidbody2d.angularVelocity = -releaseForce*rotationScalar;
 		} else if (currentState == State.ChargeLeft && Input.GetKey (left)) {
 			releaseForce += releaseForceIncreaseRate * Time.deltaTime;
+			rigidbody2d.angularVelocity = releaseForce*rotationScalar;
 		}
 
 		else if (currentState == State.ChargeRight && Input.GetKeyUp (right)) {
