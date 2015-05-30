@@ -55,4 +55,27 @@ public class playerController : MonoBehaviour {
 		}		
 	}
 
+<<<<<<< HEAD
+=======
+	void OnCollisionEnter2D (Collision2D coll) {
+		/*if (coll.gameObject.tag == "Player") {
+			// the other player has more momentum, so this player bounces off harder
+			float otherVelocityMag = coll.rigidbody.velocity.magnitude;
+			float velocityMag = rigidbody2d.velocity.magnitude;
+			if (otherVelocityMag/velocityMag>=1+momentumRange) {
+				//rigidbody2d.velocity = Vector2.zero;
+				Vector2 relativePosition = transform.position - coll.rigidbody.transform.position;
+				relativePosition = relativePosition/relativePosition.magnitude;
+				rigidbody2d.AddForce(relativePosition*(otherVelocityMag*hardMomentum*momentumScale*(otherVelocityMag/velocityMag) + minBounce));
+			} else {
+				//rigidbody2d.velocity = Vector2.zero;
+				Vector2 relativePosition = transform.position - coll.rigidbody.transform.position;
+				relativePosition = relativePosition/relativePosition.magnitude;
+				rigidbody2d.AddForce(relativePosition*(otherVelocityMag*softMomentum*momentumScale*(otherVelocityMag/velocityMag) + minBounce));
+			}
+		}*/
+	}
+
+
+>>>>>>> origin/master
 }
