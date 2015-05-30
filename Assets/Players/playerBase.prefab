@@ -99,10 +99,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   releaseForce: 0
+  initialReleaseForce: 0
   maxReleaseForce: 1000
+  rotationScalar: .5
   releaseForceIncreaseRate: 30
   left: 106
   right: 107
+  momentumRange: 0
+  hardMomentum: 1.5
+  softMomentum: .5
+  momentumScale: 100
+  minBounce: 0
+  verticalDrag: 0
 --- !u!212 &21260072
 SpriteRenderer:
   m_ObjectHideFlags: 1
