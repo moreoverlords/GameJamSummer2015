@@ -929,6 +929,10 @@ Prefab:
       propertyPath: explosionPrefab
       value: 
       objectReference: {fileID: 163066, guid: a8e4eb521079b014c901422f7f27f942, type: 2}
+    - target: {fileID: 11479748, guid: 200117ce3cfd246318acaed61f2038b0, type: 2}
+      propertyPath: tonguePrefab
+      value: 
+      objectReference: {fileID: 162556, guid: 88a1b9913a7e6df429a5cde35c70963a, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 200117ce3cfd246318acaed61f2038b0, type: 2}
   m_IsPrefabParent: 0
