@@ -12,6 +12,7 @@ public class ScoreTracker : MonoBehaviour {
 	public GameObject player1ScoreText;
 	public GameObject player2ScoreText;
 	public GameObject explosionPrefab;
+	//public GameObject tonguePrefab;
 	public float explosionOffset;
 
 	// Use this for initialization
@@ -47,9 +48,10 @@ public class ScoreTracker : MonoBehaviour {
 	}
 
 	void Explode (Vector3 dead, Vector3 alive) {
-		GameObject explosion = Instantiate (explosionPrefab, 
-		                                    new Vector3 (dead.x, alive.y - killDistance + explosionOffset, 0), 
-		                                    Quaternion.identity) as GameObject;
+		Instantiate (explosionPrefab, 
+		             new Vector3 (dead.x, alive.y - killDistance + explosionOffset, 0), 
+		             Quaternion.identity);
+		//Instantiate (tonguePrefab, transform.localPosition, Quaternion.identity);	
 	}
 
 
