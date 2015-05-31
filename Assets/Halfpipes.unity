@@ -387,6 +387,10 @@ Prefab:
       propertyPath: rowBufferCount
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 11486126, guid: b2779c36d4d5c4d05acf78887db1d900, type: 2}
+      propertyPath: wall
+      value: 
+      objectReference: {fileID: 181994, guid: 2b741545d20998a4db97074c14be3bcc, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b2779c36d4d5c4d05acf78887db1d900, type: 2}
   m_IsPrefabParent: 0
@@ -519,6 +523,14 @@ Prefab:
       propertyPath: killDistance
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 11479748, guid: 200117ce3cfd246318acaed61f2038b0, type: 2}
+      propertyPath: explosionOffset
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11479748, guid: 200117ce3cfd246318acaed61f2038b0, type: 2}
+      propertyPath: explosionPrefab
+      value: 
+      objectReference: {fileID: 151520, guid: e66ebfb84aae16c4bb2ee5cf456196b8, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 200117ce3cfd246318acaed61f2038b0, type: 2}
   m_IsPrefabParent: 0
