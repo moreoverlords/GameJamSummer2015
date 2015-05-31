@@ -9,6 +9,7 @@ public class playerController : MonoBehaviour {
 	public float initialReleaseForce;
 	public float maxReleaseForce;
 	public float maxVerticalReleaseForce;
+	public float yVelocity;
 
 	public float rotationScalar = .5f;
 
@@ -35,10 +36,11 @@ public class playerController : MonoBehaviour {
 	}
 	
 	void FixedUpdate () {
-		if (rigidbody2d.velocity.y > 0) {
+		yVelocity = rigidbody2d.velocity.y;
+		if (rigidbody2d.velocity.y > 10) {
 			gameObject.layer = LayerMask.NameToLayer("UpBall");
 		}
-		else if (rigidbody2d.velocity.y <= 0) {
+		else if (rigidbody2d.velocity.y <= 10) {
 			gameObject.layer = LayerMask.NameToLayer("DownBall");
 		}
 
