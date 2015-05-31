@@ -20,7 +20,7 @@ TagManager:
   - Wall
   - Platform
   - Background
-  - 
+  - GUI
   - 
   - 
   - 
@@ -40,6 +40,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: GUI
+    uniqueID: 2651841471
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
