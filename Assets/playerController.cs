@@ -83,8 +83,22 @@ public class playerController : MonoBehaviour {
 			leftArrow.color = new Color(1f,1f,1f,1f);
 		} 
 
+		//charging
+		else if (currentState == State.ChargeRight && Input.GetKey (right)) {
+			releaseForce += releaseForceIncreaseRate * Time.deltaTime;
+			verticalReleaseForce += verticalReleaseForceIncreaseRate * Time.deltaTime;
+			rigidbody2d.angularVelocity = -Mathf.Min(releaseForce, maxReleaseForce)*rotationScalar;
+			//rightArrow.color = new Color(1f,1f,1f, Mathf.Min(releaseForce, maxReleaseForce)/maxReleaseForce);
+			
+		} else if (currentState == State.ChargeLeft && Input.GetKey (left)) {
+			releaseForce += releaseForceIncreaseRate * Time.deltaTime;
+			verticalReleaseForce += verticalReleaseForceIncreaseRate * Time.deltaTime;
+			rigidbody2d.angularVelocity = Mathf.Min(releaseForce, maxReleaseForce)*rotationScalar;
+			//leftArrow.color= new Color(1f,1f,1f, Mathf.Min(releaseForce, maxReleaseForce)/maxReleaseForce);
+		}
+
 		//release
-		else if (currentState == State.ChargeRight && Input.GetKeyDown (right)) {
+		else if (currentState == State.ChargeRight && Input.GetKeyUp (right)) {
 			currentState = State.LaunchRight;
 			float currentRelease = Mathf.Min(releaseForce, maxReleaseForce);
 			float currentVerticalRelease = Mathf.Min (verticalReleaseForce, maxVerticalReleaseForce);
@@ -92,7 +106,7 @@ public class playerController : MonoBehaviour {
 			rigidbody2d.AddForce (Vector2.up * currentVerticalRelease);
 			resetCharge();
 
-		} else if (currentState == State.ChargeLeft && Input.GetKeyDown (left)) {
+		} else if (currentState == State.ChargeLeft && Input.GetKeyUp (left)) {
 			currentState = State.LaunchLeft;
 			float currentRelease = Mathf.Min(releaseForce, maxReleaseForce);
 			float currentVerticalRelease = Mathf.Min (verticalReleaseForce, maxVerticalReleaseForce);
@@ -101,19 +115,7 @@ public class playerController : MonoBehaviour {
 			resetCharge();
 		}
 
-		//charging
-		else if (currentState == State.ChargeRight) {
-			releaseForce += releaseForceIncreaseRate * Time.deltaTime;
-			verticalReleaseForce += verticalReleaseForceIncreaseRate * Time.deltaTime;
-			rigidbody2d.angularVelocity = -Mathf.Min(releaseForce, maxReleaseForce)*rotationScalar;
-			//rightArrow.color = new Color(1f,1f,1f, Mathf.Min(releaseForce, maxReleaseForce)/maxReleaseForce);
 
-		} else if (currentState == State.ChargeLeft) {
-			releaseForce += releaseForceIncreaseRate * Time.deltaTime;
-			verticalReleaseForce += verticalReleaseForceIncreaseRate * Time.deltaTime;
-			rigidbody2d.angularVelocity = Mathf.Min(releaseForce, maxReleaseForce)*rotationScalar;
-			//leftArrow.color= new Color(1f,1f,1f, Mathf.Min(releaseForce, maxReleaseForce)/maxReleaseForce);
-		}
 
 		
 		rightArrow.transform.rotation = rightArrowRotation;
