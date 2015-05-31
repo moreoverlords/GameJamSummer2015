@@ -13,6 +13,7 @@ public class Generator : MonoBehaviour {
 	public bool ObstacleNeeded;
 	public GameObject obstacle;
 	public GameObject wall;
+	public bool isBigWall;
 
 	public float leftBoundary;
 	float rightBoundary;
@@ -29,10 +30,14 @@ public class Generator : MonoBehaviour {
 		topOfWorld = topPosition.position;
 
 		Vector2 wallSize = wall.GetComponent<BoxCollider2D> ().size;  
-		rowHeight = wallSize.y;
+		rowHeight = wallSize.y * wall.transform.localScale.y - 1;
 
-		leftBoundary = -5f;//-(screenWidth / 2);
-		rightBoundary = 35f;//leftBoundary + screenWidth;
+		leftBoundary = -5f;
+		rightBoundary = 35f;
+		if (isBigWall) {
+			leftBoundary = -40f;//-(screenWidth / 2);
+			rightBoundary = 50f;//leftBoundary + screenWidth;
+		}
 		leftWallx  = leftBoundary + wallSize.x;
 		rightWallx = rightBoundary - wallSize.x;
 	}
@@ -73,14 +78,13 @@ public class Generator : MonoBehaviour {
 		if (obstacle) {
 			float boxWidth = 40f/numBoxes;
 			for (int j = 0; j < numBoxes; j++) {
-				Vector3 position = new Vector3 (0, Random.Range (rowTop, rowBottom), 0);
-				Quaternion rotation = new Quaternion ();
-				rotation.eulerAngles = new Vector3 (0, 0, Random.Range (10,170)); 
-				//Vector3 scale = new Vector3 (Random.Range (1f, 4f), Random.Range (1f, 4f), 1f);
-				//position.x -= obstacle.GetComponent<>() /2;
-				position.x += -10f + j * boxWidth;
-
-				GameObject newObstacle = Instantiate (obstacle, position, rotation) as GameObject;
+				Vector3 position = new Vector3 (Random.Range(0, boxWidth-4), Random.Range (rowTop, rowBottom), 0);
+				Vector3 scaleFactor = new Vector3(0, Random.Range(0,6), 0);
+				Vector3 rotation = new Vector3 (0, 0, Random.Range (10,170));
+				position.x += -20f + j * boxWidth;
+				GameObject newObstacle = Instantiate (obstacle, position, Quaternion.identity) as GameObject;
+				newObstacle.transform.localScale += scaleFactor;
+				newObstacle.transform.eulerAngles = rotation;
 			}
 		}
 	}
