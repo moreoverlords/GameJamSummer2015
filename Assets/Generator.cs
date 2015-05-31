@@ -74,13 +74,12 @@ public class Generator : MonoBehaviour {
 			float boxWidth = 40f/numBoxes;
 			for (int j = 0; j < numBoxes; j++) {
 				Vector3 position = new Vector3 (Random.Range(0, boxWidth), Random.Range (rowTop, rowBottom), 0);
-				position.x += -10f + j * boxWidth;
-				Quaternion rotation = new Quaternion();
-				rotation.eulerAngles = new Vector3 (0, 0, Random.Range (10,170));
-
-				GameObject newObstacle = Instantiate (obstacle, position, rotation) as GameObject;
-				newObstacle.transform.localScale += new Vector3(0, Random.Range(0,6), 0);
-
+				Vector3 scaleFactor = new Vector3(0, Random.Range(0,6), 0);
+				Vector3 rotation = new Vector3 (0, 0, Random.Range (10,170));
+				position.x += -20f + j * boxWidth;
+				GameObject newObstacle = Instantiate (obstacle, position, Quaternion.identity) as GameObject;
+				newObstacle.transform.localScale += scaleFactor;
+				newObstacle.transform.eulerAngles = rotation;
 			}
 		}
 	}
