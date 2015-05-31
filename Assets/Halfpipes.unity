@@ -138,6 +138,18 @@ Prefab:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11419404, guid: 6b6050c1d85b9e842a566d5de390e93a, type: 2}
+      propertyPath: verticalInitialReleaseForce
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11419404, guid: 6b6050c1d85b9e842a566d5de390e93a, type: 2}
+      propertyPath: maxVerticalReleaseForce
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 11419404, guid: 6b6050c1d85b9e842a566d5de390e93a, type: 2}
+      propertyPath: verticalReleaseForceIncreaseRate
+      value: 400
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b6050c1d85b9e842a566d5de390e93a, type: 2}
   m_IsPrefabParent: 0
