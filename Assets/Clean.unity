@@ -315,15 +315,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22449652, guid: f9c7364b80a474f2a87318b77bdfa0d5, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 200
+      value: 163
       objectReference: {fileID: 0}
     - target: {fileID: 22464716, guid: f9c7364b80a474f2a87318b77bdfa0d5, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 92.5
+      value: 92
       objectReference: {fileID: 0}
     - target: {fileID: 22464716, guid: f9c7364b80a474f2a87318b77bdfa0d5, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 200
+      value: 163
       objectReference: {fileID: 0}
     - target: {fileID: 11490904, guid: f9c7364b80a474f2a87318b77bdfa0d5, type: 2}
       propertyPath: m_Color.r
@@ -422,6 +422,10 @@ Prefab:
     - target: {fileID: 470462, guid: 9594de7dbc734c6488de7bd424ce1a01, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033858, guid: 9594de7dbc734c6488de7bd424ce1a01, type: 2}
+      propertyPath: m_GravityScale
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9594de7dbc734c6488de7bd424ce1a01, type: 2}
@@ -538,7 +542,7 @@ Prefab:
       objectReference: {fileID: 141214, guid: 389da541d2aa44209b04eef5b560e972, type: 2}
     - target: {fileID: 11486126, guid: b2779c36d4d5c4d05acf78887db1d900, type: 2}
       propertyPath: numBoxes
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11486126, guid: b2779c36d4d5c4d05acf78887db1d900, type: 2}
       propertyPath: rowBufferCount
@@ -703,6 +707,14 @@ Prefab:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11459278, guid: f200cb1499e9046f3a8e772848bdf698, type: 2}
+      propertyPath: verticalOffset
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11459278, guid: f200cb1499e9046f3a8e772848bdf698, type: 2}
+      propertyPath: dampTime
+      value: .100000001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f200cb1499e9046f3a8e772848bdf698, type: 2}
   m_IsPrefabParent: 0
@@ -859,6 +871,10 @@ Prefab:
     - target: {fileID: 484130, guid: 6b6050c1d85b9e842a566d5de390e93a, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016536, guid: 6b6050c1d85b9e842a566d5de390e93a, type: 2}
+      propertyPath: m_GravityScale
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9673838, guid: 6b6050c1d85b9e842a566d5de390e93a, type: 2}
