@@ -19,6 +19,7 @@ public class playerController : MonoBehaviour {
 
 	private Rigidbody2D rigidbody2d;
 	private Transform transform2d;
+	private TrailRenderer trailRenderer;
 
 	enum State{Idle, ChargeRight, ChargeLeft, LaunchRight, LaunchLeft} 
 	private State currentState;
@@ -28,6 +29,9 @@ public class playerController : MonoBehaviour {
 		currentState = State.Idle;
 		rigidbody2d = GetComponent<Rigidbody2D>();
 		transform2d = GetComponent<Transform>();	
+
+		trailRenderer = GetComponent<TrailRenderer> ();
+		trailRenderer.sortingOrder = 12412321;
 	}
 	
 	void FixedUpdate () {
@@ -58,14 +62,14 @@ public class playerController : MonoBehaviour {
 			rigidbody2d.angularVelocity = releaseForce*rotationScalar;
 		}
 
-		else if (currentState == State.ChargeRight && Input.GetKeyUp (right)) {
+		else if (currentState == State.ChargeRight && !Input.GetKey (right)) {
 			currentState = State.LaunchRight;
 			float currentRelease = Mathf.Min(releaseForce, maxReleaseForce);
 			float currentVerticalRelease = Mathf.Min (verticalReleaseForce, maxVerticalReleaseForce);
 			rigidbody2d.AddForce (Vector2.right * currentRelease);
 			rigidbody2d.AddForce (Vector2.up * currentVerticalRelease);
 			releaseForce = 0;
-		} else if (currentState == State.ChargeLeft && Input.GetKeyUp (left)) {
+		} else if (currentState == State.ChargeLeft && !Input.GetKey (left)) {
 			currentState = State.LaunchLeft;
 			float currentRelease = Mathf.Min(releaseForce, maxReleaseForce);
 			float currentVerticalRelease = Mathf.Min (verticalReleaseForce, maxVerticalReleaseForce);
