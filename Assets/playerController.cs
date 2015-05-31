@@ -59,10 +59,10 @@ public class playerController : MonoBehaviour {
 	}
 
 	void Update () {
-		if (rigidbody2d.velocity.y > 10) {
+		if (this.rigidbody2d.velocity.y > 10) {
 			gameObject.layer = LayerMask.NameToLayer("UpBall");
 		}
-		else if (rigidbody2d.velocity.y <= 10) {
+		else if (this.rigidbody2d.velocity.y <= 10) {
 			gameObject.layer = LayerMask.NameToLayer("DownBall");
 		}
 
