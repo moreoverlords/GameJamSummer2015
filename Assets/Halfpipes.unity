@@ -138,6 +138,14 @@ Prefab:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11419404, guid: 6b6050c1d85b9e842a566d5de390e93a, type: 2}
+      propertyPath: maxVerticalReleaseForce
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 11419404, guid: 6b6050c1d85b9e842a566d5de390e93a, type: 2}
+      propertyPath: verticalReleaseForceIncreaseRate
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b6050c1d85b9e842a566d5de390e93a, type: 2}
   m_IsPrefabParent: 0
@@ -525,12 +533,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11479748, guid: 200117ce3cfd246318acaed61f2038b0, type: 2}
       propertyPath: explosionOffset
-      value: 5
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 11479748, guid: 200117ce3cfd246318acaed61f2038b0, type: 2}
       propertyPath: explosionPrefab
       value: 
-      objectReference: {fileID: 151520, guid: e66ebfb84aae16c4bb2ee5cf456196b8, type: 2}
+      objectReference: {fileID: 163066, guid: a8e4eb521079b014c901422f7f27f942, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 200117ce3cfd246318acaed61f2038b0, type: 2}
   m_IsPrefabParent: 0
@@ -589,6 +597,14 @@ Prefab:
     - target: {fileID: 5083496, guid: 6b6050c1d85b9e842a566d5de390e93a, type: 2}
       propertyPath: m_CollisionDetection
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11419404, guid: 6b6050c1d85b9e842a566d5de390e93a, type: 2}
+      propertyPath: maxVerticalReleaseForce
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 11419404, guid: 6b6050c1d85b9e842a566d5de390e93a, type: 2}
+      propertyPath: verticalReleaseForceIncreaseRate
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b6050c1d85b9e842a566d5de390e93a, type: 2}
