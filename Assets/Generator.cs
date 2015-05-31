@@ -73,7 +73,7 @@ public class Generator : MonoBehaviour {
 		if (obstacle) {
 			float boxWidth = 40f/numBoxes;
 			for (int j = 0; j < numBoxes; j++) {
-				Vector3 position = new Vector3 (Random.Range(0, boxWidth), Random.Range (rowTop, rowBottom), 0);
+				Vector3 position = new Vector3 (Random.Range(0, boxWidth-4), Random.Range (rowTop, rowBottom), 0);
 				Vector3 scaleFactor = new Vector3(0, Random.Range(0,6), 0);
 				Vector3 rotation = new Vector3 (0, 0, Random.Range (10,170));
 				position.x += -20f + j * boxWidth;
