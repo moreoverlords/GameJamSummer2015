@@ -775,7 +775,11 @@ Prefab:
     - target: {fileID: 11486126, guid: b2779c36d4d5c4d05acf78887db1d900, type: 2}
       propertyPath: wall
       value: 
-      objectReference: {fileID: 181994, guid: 2b741545d20998a4db97074c14be3bcc, type: 2}
+      objectReference: {fileID: 155572, guid: 484de0061a3124d24b728b9bdbd76137, type: 2}
+    - target: {fileID: 11486126, guid: b2779c36d4d5c4d05acf78887db1d900, type: 2}
+      propertyPath: isBigWall
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b2779c36d4d5c4d05acf78887db1d900, type: 2}
   m_IsPrefabParent: 0
@@ -925,6 +929,14 @@ Prefab:
     - target: {fileID: 164640, guid: f200cb1499e9046f3a8e772848bdf698, type: 2}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11459278, guid: f200cb1499e9046f3a8e772848bdf698, type: 2}
+      propertyPath: pitchScale
+      value: .00999999978
+      objectReference: {fileID: 0}
+    - target: {fileID: 11459278, guid: f200cb1499e9046f3a8e772848bdf698, type: 2}
+      propertyPath: pitchSmoothTime
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f200cb1499e9046f3a8e772848bdf698, type: 2}
