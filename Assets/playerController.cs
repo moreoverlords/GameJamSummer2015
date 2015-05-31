@@ -57,17 +57,9 @@ public class playerController : MonoBehaviour {
 		rightArrow.color  = new Color(1f,1f,1f,0f);
 		leftArrow.color  = new Color(1f,1f,1f,0f);
 	}
-<<<<<<< HEAD
 
 	void Update () {
-
-		if (rigidbody2d.velocity.y > 0) {
-=======
-	
-	void FixedUpdate () {
-		yVelocity = rigidbody2d.velocity.y;
 		if (rigidbody2d.velocity.y > 10) {
->>>>>>> origin/master
 			gameObject.layer = LayerMask.NameToLayer("UpBall");
 		}
 		else if (rigidbody2d.velocity.y <= 10) {
@@ -89,22 +81,8 @@ public class playerController : MonoBehaviour {
 			leftArrow.color = new Color(1f,1f,1f,1f);
 		} 
 
-<<<<<<< HEAD
 		//release
 		else if (currentState == State.ChargeRight && Input.GetKeyDown (right)) {
-=======
-		else if (currentState == State.ChargeRight && Input.GetKey (right)) {
-			releaseForce += releaseForceIncreaseRate * Time.deltaTime;
-			verticalReleaseForce += verticalReleaseForceIncreaseRate * Time.deltaTime;
-			rigidbody2d.angularVelocity = -(Mathf.Min (releaseForce, maxReleaseForce))*rotationScalar;
-		} else if (currentState == State.ChargeLeft && Input.GetKey (left)) {
-			releaseForce += releaseForceIncreaseRate * Time.deltaTime;
-			verticalReleaseForce += verticalReleaseForceIncreaseRate * Time.deltaTime;
-			rigidbody2d.angularVelocity = Mathf.Min (releaseForce, maxReleaseForce)*rotationScalar;
-		}
-
-		else if (currentState == State.ChargeRight && !Input.GetKey (right)) {
->>>>>>> origin/master
 			currentState = State.LaunchRight;
 			float currentRelease = Mathf.Min(releaseForce, maxReleaseForce);
 			float currentVerticalRelease = Mathf.Min (verticalReleaseForce, maxVerticalReleaseForce);
