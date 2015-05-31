@@ -83,6 +83,7 @@ public class playerController : MonoBehaviour {
 			leftArrow.color = new Color(1f,1f,1f,1f);
 		} 
 
+		//release
 		else if (currentState == State.ChargeRight && Input.GetKeyDown (right)) {
 			currentState = State.LaunchRight;
 			float currentRelease = Mathf.Min(releaseForce, maxReleaseForce);
