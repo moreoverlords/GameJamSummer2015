@@ -5,7 +5,7 @@ public class playerController : MonoBehaviour {
 
 	public float verticalReleaseForce;
 	public float releaseForce;
-	public float verticalinitialReleaseForce;
+	public float verticalInitialReleaseForce;
 	public float initialReleaseForce;
 	public float maxReleaseForce;
 	public float maxVerticalReleaseForce;
@@ -30,7 +30,7 @@ public class playerController : MonoBehaviour {
 		transform2d = GetComponent<Transform>();	
 	}
 	
-	void Update () {
+	void FixedUpdate () {
 		if (rigidbody2d.velocity.y > 0) {
 			gameObject.layer = LayerMask.NameToLayer("UpBall");
 		}
@@ -41,9 +41,11 @@ public class playerController : MonoBehaviour {
 		if (Input.GetKeyDown (right)) {
 			currentState = State.ChargeRight;
 			releaseForce = initialReleaseForce;
+			verticalReleaseForce = verticalInitialReleaseForce;
 		} else if (Input.GetKeyDown (left)) {
 			currentState = State.ChargeLeft;
 			releaseForce = initialReleaseForce;
+			verticalReleaseForce = verticalInitialReleaseForce;
 		} 
 
 		else if (currentState == State.ChargeRight && Input.GetKey (right)) {
