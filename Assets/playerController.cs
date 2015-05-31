@@ -55,11 +55,11 @@ public class playerController : MonoBehaviour {
 		else if (currentState == State.ChargeRight && Input.GetKey (right)) {
 			releaseForce += releaseForceIncreaseRate * Time.deltaTime;
 			verticalReleaseForce += verticalReleaseForceIncreaseRate * Time.deltaTime;
-			rigidbody2d.angularVelocity = -releaseForce*rotationScalar;
+			rigidbody2d.angularVelocity = -(Mathf.Min (releaseForce, maxReleaseForce))*rotationScalar;
 		} else if (currentState == State.ChargeLeft && Input.GetKey (left)) {
 			releaseForce += releaseForceIncreaseRate * Time.deltaTime;
 			verticalReleaseForce += verticalReleaseForceIncreaseRate * Time.deltaTime;
-			rigidbody2d.angularVelocity = releaseForce*rotationScalar;
+			rigidbody2d.angularVelocity = Mathf.Min (releaseForce, maxReleaseForce)*rotationScalar;
 		}
 
 		else if (currentState == State.ChargeRight && !Input.GetKey (right)) {
