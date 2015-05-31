@@ -908,12 +908,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11479748, guid: 200117ce3cfd246318acaed61f2038b0, type: 2}
       propertyPath: explosionOffset
-      value: 6.5
+      value: 6.30000019
       objectReference: {fileID: 0}
     - target: {fileID: 11479748, guid: 200117ce3cfd246318acaed61f2038b0, type: 2}
       propertyPath: explosionPrefab
       value: 
-      objectReference: {fileID: 163066, guid: a8e4eb521079b014c901422f7f27f942, type: 2}
+      objectReference: {fileID: 197640, guid: 40985063c0741fb44b09ec2f39c892ba, type: 2}
     - target: {fileID: 11479748, guid: 200117ce3cfd246318acaed61f2038b0, type: 2}
       propertyPath: tonguePrefab
       value: 
