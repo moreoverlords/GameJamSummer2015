@@ -547,6 +547,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11481822, guid: 9594de7dbc734c6488de7bd424ce1a01, type: 2}
+      propertyPath: maxVerticalReleaseForce
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033858, guid: 9594de7dbc734c6488de7bd424ce1a01, type: 2}
+      propertyPath: m_GravityScale
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9594de7dbc734c6488de7bd424ce1a01, type: 2}
   m_IsPrefabParent: 0
@@ -615,7 +623,7 @@ Prefab:
       objectReference: {fileID: 141214, guid: c75282f5918317b4cb22b3855d97760d, type: 2}
     - target: {fileID: 11486126, guid: b2779c36d4d5c4d05acf78887db1d900, type: 2}
       propertyPath: numBoxes
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11486126, guid: b2779c36d4d5c4d05acf78887db1d900, type: 2}
       propertyPath: rowBufferCount
@@ -625,6 +633,10 @@ Prefab:
       propertyPath: wall
       value: 
       objectReference: {fileID: 181994, guid: 2b741545d20998a4db97074c14be3bcc, type: 2}
+    - target: {fileID: 11486126, guid: b2779c36d4d5c4d05acf78887db1d900, type: 2}
+      propertyPath: isBigWall
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b2779c36d4d5c4d05acf78887db1d900, type: 2}
   m_IsPrefabParent: 0
@@ -1026,6 +1038,14 @@ Prefab:
     - target: {fileID: 11419404, guid: 6b6050c1d85b9e842a566d5de390e93a, type: 2}
       propertyPath: rightArrow
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11480116, guid: 6b6050c1d85b9e842a566d5de390e93a, type: 2}
+      propertyPath: maxVerticalReleaseForce
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016536, guid: 6b6050c1d85b9e842a566d5de390e93a, type: 2}
+      propertyPath: m_GravityScale
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9673838, guid: 6b6050c1d85b9e842a566d5de390e93a, type: 2}
