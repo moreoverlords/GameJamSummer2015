@@ -13,6 +13,7 @@ public class Generator : MonoBehaviour {
 	public bool ObstacleNeeded;
 	public GameObject obstacle;
 	public GameObject wall;
+	public bool isBigWall;
 
 	public float leftBoundary;
 	float rightBoundary;
@@ -29,10 +30,14 @@ public class Generator : MonoBehaviour {
 		topOfWorld = topPosition.position;
 
 		Vector2 wallSize = wall.GetComponent<BoxCollider2D> ().size;  
-		rowHeight = wallSize.y;
+		rowHeight = wallSize.y * wall.transform.localScale.y - 1;
 
-		leftBoundary = -5f;//-(screenWidth / 2);
-		rightBoundary = 35f;//leftBoundary + screenWidth;
+		leftBoundary = -5f;
+		rightBoundary = 35f;
+		if (isBigWall) {
+			leftBoundary = -40f;//-(screenWidth / 2);
+			rightBoundary = 50f;//leftBoundary + screenWidth;
+		}
 		leftWallx  = leftBoundary + wallSize.x;
 		rightWallx = rightBoundary - wallSize.x;
 	}
