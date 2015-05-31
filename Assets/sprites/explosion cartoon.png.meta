@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 278d89f469c37ec48b6ca027e2cf1a24
-timeCreated: 1433087708
+timeCreated: 1433088771
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -158,46 +158,6 @@ TextureImporter:
         y: 446
         width: 9
         height: 5
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: explosion cartoon_9
-      rect:
-        serializedVersion: 2
-        x: 591
-        y: 433
-        width: 8
-        height: 9
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: explosion cartoon_10
-      rect:
-        serializedVersion: 2
-        x: 632
-        y: 437
-        width: 8
-        height: 7
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: explosion cartoon_11
-      rect:
-        serializedVersion: 2
-        x: 736
-        y: 432
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: explosion cartoon_12
-      rect:
-        serializedVersion: 2
-        x: 590
-        y: 415
-        width: 10
-        height: 11
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

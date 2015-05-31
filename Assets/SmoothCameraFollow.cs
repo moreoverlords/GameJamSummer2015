@@ -8,6 +8,10 @@ public class SmoothCameraFollow : MonoBehaviour {
 	private Vector3 velocity = Vector3.zero;
 	public Transform generator;
 
+	public float pitchScale;
+	public float pitchSmoothTime;
+	float currentVelocity = 0;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -23,6 +27,12 @@ public class SmoothCameraFollow : MonoBehaviour {
 			);
 			Vector3 destination = new Vector3(transform.position.x, target.position.y, transform.position.z);//transform.position + delta;
 			transform.position = Vector3.SmoothDamp(transform.position, destination, ref velocity, dampTime);
+
+			//audio shnitz
+			float curPitch = GetComponent<AudioSource>().pitch;
+			GetComponent<AudioSource>().pitch = Mathf.SmoothDamp(
+				curPitch, 1 + pitchScale * target.GetComponent<Rigidbody2D>().velocity.y,
+				ref currentVelocity, pitchSmoothTime);
 		}
 	}
 }
