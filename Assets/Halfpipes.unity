@@ -615,7 +615,7 @@ Prefab:
     - target: {fileID: 11486126, guid: b2779c36d4d5c4d05acf78887db1d900, type: 2}
       propertyPath: obstacle
       value: 
-      objectReference: {fileID: 141214, guid: 389da541d2aa44209b04eef5b560e972, type: 2}
+      objectReference: {fileID: 141214, guid: c75282f5918317b4cb22b3855d97760d, type: 2}
     - target: {fileID: 11486126, guid: b2779c36d4d5c4d05acf78887db1d900, type: 2}
       propertyPath: numBoxes
       value: 2
